@@ -1,0 +1,21 @@
+/* Main container takes up the full viewport height */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Center content */
+.content {
+  display: flex;
+  flex: 1;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+/* Optional styling for footer */
+app-footer {
+  background-color: #007bff; /* Matches your bg-primary */
+  color: white;
+  padding: 10px;
+}

@@ -1,0 +1,30 @@
+<h1>TODO Creation or Update page</h1>
+<div class="container">
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && todoForm.invalid">Enter valid values</div>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && targetDate.invalid">Enter valid target date</div>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && description.invalid">Enter atleast 5 characters in
+    description</div>
+
+  <form (ngSubmit)="!todoForm.invalid && savetodo()" #todoForm="ngForm">
+    <fieldset class="form-group">
+      <label class="form-label">Description of the Todo</label>
+      <input type="text" [(ngModel)]="todo.description" class="form-control" name="description" required="required"
+        placeholder="Enter the description" minlength="5" maxlength="50" #description="ngModel">
+    </fieldset>
+    <fieldset class="form-group">
+      <label class="form-label">Target Date</label>
+      <input type="date" [ngModel]="todo.targetDate | date:'yyyy-MM-dd'" (ngModelChange)="todo.targetDate = $event"
+        class="form-control" name="targetDate" required="required" #targetDate="ngModel" [min]="todayDate">
+
+    </fieldset>
+    <div class="flex-md-row">
+      <button type="submit" class="btn btn-success"> Save </button>
+    </div>
+  </form>
+</div>
+
+<!-- (click)="savetodo()" -->
+<!-- Here we are removing this event binding to ngSubmit() -->
+
+<!-- #ngForm means template variable reference to the entire form -->
+<!-- we can use this template variable within this file anywhere -->
