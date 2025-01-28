@@ -38,3 +38,18 @@ ng test --->In frontend test are called as specs -->specifications
 
 Please use --skip-import --standalone options when executing the command as shown below:
 ng generate component welcome --skip-import --standalone
+
+
+{{}}---->string interpolation means whatever the member variable defined in typescript file we can use in html file to print this 
+
+(click) =handleLogin()--->event binding whenever the click happens in that component some event is happened and handlelogin method calls
+
+twoway binding [(ngModel)]=”username” means which is updated in both the files which is useful when the user enters different names
+
+*ngIf is the angular attribute whenever the condition is applied for the both the file depenedency
+
+Appmodule is the main or first module when the angular bootstraps it.It will be present in main.ts
+
+Difference between href and routerLink?
+
+href will leads to complete page refresh but routerLink will leads to routing not refresh
